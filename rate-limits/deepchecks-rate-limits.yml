@@ -1,0 +1,64 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Deepchecks
+providerId: deepchecks
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: false
+tags:
+- AI
+- LLM
+- Evaluation
+- Testing
+- Monitoring
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  The Deepchecks LLM Evaluation cloud API does not publish explicit numeric
+  request-per-second/minute rate limits. Practical capacity is governed by plan
+  entitlements - number of AI applications, seats, and DPUs (Data Processing
+  Units) per month - rather than by published HTTP throttling thresholds.
+  Interaction logging is designed for batched and streamed ingestion. The
+  open-source packages run locally and impose no API rate limits. Specific
+  per-endpoint limits are not reconciled in this artifact.
+notes: >-
+  Verify any per-account or per-endpoint throttling and DPU consumption rules in
+  the Deepchecks LLM Evaluation documentation and account console on reconciliation.
+  DPU monthly allotments effectively cap evaluation throughput per plan.
+sources:
+- https://llmdocs.deepchecks.com/reference
+- https://www.deepchecks.com/pricing/
+- https://llmdocs.deepchecks.com/docs/deepchecks-sdk
+responseCodes:
+  throttled: 429
+limits:
+- name: DPUs Per Month
+  scope: account
+  metric: dpus
+  limit: see plan (5K Basic / 20K Scale / custom Enterprise)
+  notes: Data Processing Units consumed by evaluation; primary capacity governor per plan.
+- name: AI Applications
+  scope: account
+  metric: applications
+  limit: see plan (1 Basic / 3 Scale / custom Enterprise)
+  notes: Number of concurrently configured evaluation applications.
+- name: Seats
+  scope: account
+  metric: seats
+  limit: see plan (3 Basic / 5 Scale / custom Enterprise)
+  notes: Number of platform user seats.
+- name: Interaction Ingestion
+  scope: account
+  metric: requests
+  limit: see provider documentation
+  notes: No published RPM/RPS; batch and streaming ingestion recommended for high volume.
+policies:
+- name: Plan-Governed Capacity
+  description: Throughput is bounded by DPU, application, and seat entitlements rather than published HTTP rate limits.
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on 429 responses.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

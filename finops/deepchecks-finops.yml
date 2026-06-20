@@ -1,0 +1,97 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Deepchecks
+providerId: deepchecks
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: false
+tags:
+- AI
+- LLM
+- Evaluation
+- Testing
+- Monitoring
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Deepchecks spend. The open-source deepchecks packages are free
+  (AGPL-3.0) and self-hosted, contributing only internal compute cost. The hosted
+  LLM Evaluation cloud is sold as subscription tiers (Basic / Scale / Enterprise)
+  metered by seats, number of AI applications, and DPUs (Data Processing Units)
+  per month, with custom / quote-based pricing above the Basic trial. Cost is
+  driven mainly by evaluation volume (DPUs) and application/seat count.
+notes: >-
+  Most commercial pricing is quote-based; numeric per-DPU rates are not published.
+  Verify DPU definitions, allotments, and overage handling against the pricing
+  page and account agreement during reconciliation.
+sources:
+- https://www.deepchecks.com/pricing/
+- https://llmdocs.deepchecks.com
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Deepchecks
+serviceCategory: AI and Machine Learning
+billingModel:
+  pricingCategory: Subscription-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: Deepchecks LLM Evaluation
+  ServiceCategory: AI and Machine Learning
+  ProviderName: Deepchecks
+  PublisherName: Deepchecks
+  InvoiceIssuerName: Deepchecks
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Subscription-Based
+meters:
+- name: dpus
+  description: Data Processing Units consumed running evaluation over logged interactions, allotted per plan per month.
+  unit: dpus
+  aggregation: sum
+  dimensions:
+  - account
+  - application
+- name: ai_applications
+  description: Number of configured evaluation applications, capped per plan.
+  unit: applications
+  aggregation: max
+  dimensions:
+  - account
+- name: seats
+  description: Platform user seats, capped per plan.
+  unit: seats
+  aggregation: max
+  dimensions:
+  - account
+- name: interactions_logged
+  description: Raw LLM interactions logged for evaluation; drives DPU consumption.
+  unit: interactions
+  aggregation: sum
+  dimensions:
+  - account
+  - application
+  - version
+principles:
+- name: Visibility
+  description: Track DPU burn per application and version; monitor monthly allotment consumption in the console.
+- name: Allocation
+  description: Map applications and versions to teams/products; tag service tokens per pipeline for attribution.
+- name: Optimization
+  description: Sample or batch interactions, scope custom properties to what is needed, and self-host the free open-source packages for pre-production validation.
+- name: Accountability
+  description: Assign owners per application; review DPU spend monthly against plan allotments and budget.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

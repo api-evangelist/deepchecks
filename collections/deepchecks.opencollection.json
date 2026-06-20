@@ -1,0 +1,215 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Deepchecks LLM Evaluation API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "System",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve the backend version.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.llm.deepchecks.com/api/v1/backend-version",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve the backend version."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an application.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.llm.deepchecks.com/api/v1/applications",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"name\": \"my-app\",\n  \"kind\": \"QA\"\n}"
+            }
+          },
+          "docs": "Create an application."
+        },
+        {
+          "info": {
+            "name": "List applications.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.llm.deepchecks.com/api/v1/applications"
+          },
+          "docs": "List applications."
+        },
+        {
+          "info": {
+            "name": "Update LLM property display names.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.llm.deepchecks.com/api/v1/applications/{{app_id}}/llm-prop-definitions",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"definitions\": []\n}"
+            }
+          },
+          "docs": "Update LLM property display names."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Application Versions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an application version.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"application_id\": 1,\n  \"name\": \"v1\"\n}"
+            }
+          },
+          "docs": "Create an application version."
+        },
+        {
+          "info": {
+            "name": "List application versions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions"
+          },
+          "docs": "List application versions."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Interactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Log a batch of interactions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/{{application_version_id}}/interactions",
+            "body": {
+              "type": "json",
+              "data": "[\n  {\n    \"user_interaction_id\": \"abc-123\",\n    \"input\": \"What is Deepchecks?\",\n    \"output\": \"Deepchecks is an ML and LLM validation platform.\"\n  }\n]"
+            }
+          },
+          "docs": "Log a batch of interactions."
+        },
+        {
+          "info": {
+            "name": "Get interactions by filter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/{{application_version_id}}/interactions"
+          },
+          "docs": "Get interactions by filter."
+        },
+        {
+          "info": {
+            "name": "Delete interactions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/{{application_version_id}}/interactions",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"user_interaction_ids\": []\n}"
+            }
+          },
+          "docs": "Delete interactions."
+        },
+        {
+          "info": {
+            "name": "Get interaction completion status.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/{{application_version_id}}/interactions/complete-status",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"user_interaction_ids\": []\n}"
+            }
+          },
+          "docs": "Get interaction completion status."
+        },
+        {
+          "info": {
+            "name": "Download all interactions by filter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/{{application_version_id}}/interactions/download"
+          },
+          "docs": "Download all interactions by filter, enriched with properties and annotations."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Spans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get raw spans by filter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.llm.deepchecks.com/api/v1/spans"
+          },
+          "docs": "Get raw tracing spans by filter."
+        }
+      ]
+    }
+  ]
+}

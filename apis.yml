@@ -1,0 +1,158 @@
+aid: deepchecks
+url: https://raw.githubusercontent.com/api-evangelist/deepchecks/refs/heads/main/apis.yml
+name: Deepchecks
+kind: company
+description: Deepchecks is an ML and LLM testing, evaluation, and monitoring platform.
+  Its cloud LLM Evaluation product exposes a REST API for logging LLM interactions,
+  managing applications and versions, retrieving annotations, and configuring evaluation
+  properties, while its open-source Python packages provide continuous validation of
+  tabular, computer-vision, and LLM data and models.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- AI
+- LLM
+- Evaluation
+- Testing
+- Monitoring
+created: '2026-06-20'
+modified: '2026-06-20'
+specificationVersion: '0.19'
+apis:
+- aid: deepchecks:llm-interactions-logging
+  name: Deepchecks LLM Interactions / Logging API
+  tags:
+  - Interactions
+  - Logging
+  - LLM
+  - Evaluation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://llmdocs.deepchecks.com/reference
+  baseURL: https://app.llm.deepchecks.com/api/v1
+  properties:
+  - url: https://llmdocs.deepchecks.com/docs/deepchecks-sdk
+    type: Documentation
+  - url: https://llmdocs.deepchecks.com/reference
+    type: APIReference
+  - url: openapi/deepchecks-openapi.yml
+    type: OpenAPI
+  - url: collections/deepchecks.postman_collection.json
+    type: PostmanCollection
+  - url: collections/deepchecks.opencollection.json
+    type: OpenCollection
+  - url: https://github.com/deepchecks
+    type: GitHub
+  description: Logs raw LLM interactions (input, output, context, history, and metadata)
+    to a specific application version for evaluation, retrieves enriched interactions
+    by filter, downloads interactions, deletes interactions, and checks interaction
+    completion status.
+- aid: deepchecks:applications-versions
+  name: Deepchecks Applications / Versions API
+  tags:
+  - Applications
+  - Versions
+  - Configuration
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://llmdocs.deepchecks.com/reference
+  baseURL: https://app.llm.deepchecks.com/api/v1
+  properties:
+  - url: https://llmdocs.deepchecks.com/docs/deepchecks-sdk
+    type: Documentation
+  - url: https://llmdocs.deepchecks.com/reference
+    type: APIReference
+  - url: openapi/deepchecks-openapi.yml
+    type: OpenAPI
+  - url: collections/deepchecks.postman_collection.json
+    type: PostmanCollection
+  - url: collections/deepchecks.opencollection.json
+    type: OpenCollection
+  - url: https://github.com/deepchecks
+    type: GitHub
+  description: Creates and lists evaluation applications and their versions, the
+    organizational units that scope interactions, properties, and evaluation runs in
+    the Deepchecks LLM Evaluation platform.
+- aid: deepchecks:annotations
+  name: Deepchecks Annotations API
+  tags:
+  - Annotations
+  - Labels
+  - Evaluation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://llmdocs.deepchecks.com/reference
+  baseURL: https://app.llm.deepchecks.com/api/v1
+  properties:
+  - url: https://llmdocs.deepchecks.com/docs/deepchecks-sdk
+    type: Documentation
+  - url: https://llmdocs.deepchecks.com/reference
+    type: APIReference
+  - url: openapi/deepchecks-openapi.yml
+    type: OpenAPI
+  - url: collections/deepchecks.postman_collection.json
+    type: PostmanCollection
+  - url: collections/deepchecks.opencollection.json
+    type: OpenCollection
+  - url: https://github.com/deepchecks
+    type: GitHub
+  description: Reads automatic and manual annotations (good / bad / unknown labels and
+    reasons) attached to logged interactions, returned alongside interactions when
+    downloading enriched evaluation data.
+- aid: deepchecks:properties
+  name: Deepchecks Properties API
+  tags:
+  - Properties
+  - Metrics
+  - Custom Properties
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://llmdocs.deepchecks.com/reference
+  baseURL: https://app.llm.deepchecks.com/api/v1
+  properties:
+  - url: https://llmdocs.deepchecks.com/docs/deepchecks-sdk
+    type: Documentation
+  - url: https://llmdocs.deepchecks.com/reference
+    type: APIReference
+  - url: openapi/deepchecks-openapi.yml
+    type: OpenAPI
+  - url: collections/deepchecks.postman_collection.json
+    type: PostmanCollection
+  - url: collections/deepchecks.opencollection.json
+    type: OpenCollection
+  - url: https://github.com/deepchecks
+    type: GitHub
+  description: Configures LLM property definitions and display names per application,
+    governing the built-in and custom properties (relevance, grounded-in-context,
+    toxicity, PII, and more) that Deepchecks computes over logged interactions.
+- aid: deepchecks:open-source-testing
+  name: Deepchecks Open-Source Testing
+  tags:
+  - Open Source
+  - Testing
+  - Validation
+  - Python
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://github.com/deepchecks/deepchecks
+  baseURL: https://github.com/deepchecks/deepchecks
+  properties:
+  - url: https://docs.deepchecks.com/stable/getting-started/welcome.html
+    type: Documentation
+  - url: https://github.com/deepchecks/deepchecks
+    type: GitHub
+  description: The AGPL-3.0 licensed open-source Python package for continuous validation
+    of tabular, computer-vision, and LLM/NLP data and models. Distributed via PyPI
+    (pip install deepchecks); a Python library rather than a hosted HTTP API.
+common:
+- type: GitHubOrganization
+  url: https://github.com/deepchecks
+- type: LinkedIn
+  url: https://www.linkedin.com/company/deepchecks
+- type: Website
+  url: https://www.deepchecks.com
+- type: Documentation
+  url: https://llmdocs.deepchecks.com
+- type: Plans
+  url: plans/deepchecks-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/deepchecks-rate-limits.yml
+- type: FinOps
+  url: finops/deepchecks-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

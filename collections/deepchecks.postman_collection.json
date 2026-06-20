@@ -1,0 +1,247 @@
+{
+  "info": {
+    "name": "Deepchecks LLM Evaluation API",
+    "description": "REST API for the Deepchecks LLM Evaluation cloud platform.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://app.llm.deepchecks.com",
+      "type": "string"
+    },
+    {
+      "key": "app_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "application_version_id",
+      "value": "1",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "System",
+      "item": [
+        {
+          "name": "Retrieve the backend version.",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/backend-version",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "backend-version"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Applications",
+      "item": [
+        {
+          "name": "Create an application.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"my-app\",\n  \"kind\": \"QA\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/applications",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "applications"]
+            }
+          }
+        },
+        {
+          "name": "List applications.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/applications",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "applications"]
+            }
+          }
+        },
+        {
+          "name": "Update LLM property display names.",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"definitions\": []\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/applications/{{app_id}}/llm-prop-definitions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "applications", "{{app_id}}", "llm-prop-definitions"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Application Versions",
+      "item": [
+        {
+          "name": "Create an application version.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"application_id\": 1,\n  \"name\": \"v1\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/application-versions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "application-versions"]
+            }
+          }
+        },
+        {
+          "name": "List application versions.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/application-versions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "application-versions"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Interactions",
+      "item": [
+        {
+          "name": "Log a batch of interactions.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"user_interaction_id\": \"abc-123\",\n    \"input\": \"What is Deepchecks?\",\n    \"output\": \"Deepchecks is an ML and LLM validation platform.\"\n  }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/application-versions/{{application_version_id}}/interactions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "application-versions", "{{application_version_id}}", "interactions"]
+            }
+          }
+        },
+        {
+          "name": "Get interactions by filter.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/application-versions/{{application_version_id}}/interactions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "application-versions", "{{application_version_id}}", "interactions"]
+            }
+          }
+        },
+        {
+          "name": "Delete interactions.",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_interaction_ids\": []\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/application-versions/{{application_version_id}}/interactions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "application-versions", "{{application_version_id}}", "interactions"]
+            }
+          }
+        },
+        {
+          "name": "Get interaction completion status.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_interaction_ids\": []\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/application-versions/{{application_version_id}}/interactions/complete-status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "application-versions", "{{application_version_id}}", "interactions", "complete-status"]
+            }
+          }
+        },
+        {
+          "name": "Download all interactions by filter.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/application-versions/{{application_version_id}}/interactions/download",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "application-versions", "{{application_version_id}}", "interactions", "download"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Spans",
+      "item": [
+        {
+          "name": "Get raw spans by filter.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/spans",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "spans"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

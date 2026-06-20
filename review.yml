@@ -1,0 +1,75 @@
+aid: deepchecks
+name: Deepchecks
+review:
+  question: Does Deepchecks expose a documented public WebSocket or streaming API?
+  answer: false
+  date: '2026-06-20'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. The Deepchecks LLM Evaluation cloud API is
+    a synchronous REST API under https://app.llm.deepchecks.com/api/v1. "Data
+    streaming" in the docs refers to incremental batched HTTP ingestion of
+    interactions, not a server-push transport. No WebSocket or Server-Sent
+    Events surface is documented, so there is no real streaming protocol to model.
+findings:
+  summary: |
+    Deepchecks ships two distinct surfaces. (1) An open-source family of Python
+    packages (deepchecks, AGPL-3.0) for continuous validation of tabular, CV,
+    and NLP/LLM data and models - a library, not an HTTP API. (2) A commercial
+    LLM Evaluation cloud with a documented REST API at
+    https://app.llm.deepchecks.com/api/v1, authenticated with a Deepchecks API
+    token as a Bearer token. The REST API covers application and version
+    management, interaction logging/retrieval/download/deletion, completion
+    status, LLM property definitions, and raw spans. No WebSocket or SSE
+    streaming endpoint is documented.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://app.llm.deepchecks.com/api/v1
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented in the Deepchecks LLM Evaluation API reference or SDK docs as of the review date.
+    - protocol: SSE
+      scheme: https
+      documented: false
+      note: No Server-Sent Events surface is documented. "Streaming" ingestion is incremental batched HTTP POST of interactions, not server push.
+  endpointsConfirmedRest:
+    - POST   https://app.llm.deepchecks.com/api/v1/backend-version
+    - POST   https://app.llm.deepchecks.com/api/v1/applications
+    - GET    https://app.llm.deepchecks.com/api/v1/applications
+    - POST   https://app.llm.deepchecks.com/api/v1/application-versions
+    - GET    https://app.llm.deepchecks.com/api/v1/application-versions
+    - POST   https://app.llm.deepchecks.com/api/v1/application-versions/{application_version_id}/interactions
+    - GET    https://app.llm.deepchecks.com/api/v1/application-versions/{application_version_id}/interactions
+    - DELETE https://app.llm.deepchecks.com/api/v1/application-versions/{application_version_id}/interactions
+    - POST   https://app.llm.deepchecks.com/api/v1/application-versions/{application_version_id}/interactions/complete-status
+    - GET    https://app.llm.deepchecks.com/api/v1/application-versions/{application_version_id}/interactions/download
+    - PUT    https://app.llm.deepchecks.com/api/v1/applications/{app_id}/llm-prop-definitions
+    - GET    https://app.llm.deepchecks.com/api/v1/spans
+sources:
+  - url: https://llmdocs.deepchecks.com/reference
+    type: APIReference
+    note: REST endpoint index for the LLM Evaluation API; all documented endpoints are HTTPS REST.
+  - url: https://llmdocs.deepchecks.com/docs/deepchecks-sdk
+    type: Documentation
+    note: SDK is a thin wrapper over the REST API; describes batch and streaming (batched HTTP) ingestion. No WebSocket.
+  - url: https://llmdocs.deepchecks.com/llms.txt
+    type: Documentation
+    note: Markdown/OpenAPI index of documented pages and endpoints.
+  - url: https://github.com/deepchecks/deepchecks
+    type: GitHub
+    note: Open-source AGPL-3.0 Python testing packages; a library, not a hosted API.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket or SSE protocol surface exists. The platform is REST-only, so
+    no AsyncAPI document was authored. apis.yml captures the five sub-API
+    groupings (LLM interactions/logging, applications/versions, annotations,
+    properties, and open-source testing).
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

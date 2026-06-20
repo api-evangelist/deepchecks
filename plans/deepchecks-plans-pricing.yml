@@ -1,0 +1,163 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Deepchecks
+providerId: deepchecks
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: false
+tags:
+- AI
+- LLM
+- Evaluation
+- Testing
+- Monitoring
+- Plans
+description: >-
+  Deepchecks splits into a free open-source offering and a commercial cloud LLM
+  Evaluation product. The open-source deepchecks Python packages (tabular, CV,
+  NLP/LLM) are free under AGPL-3.0. The hosted LLM Evaluation platform is sold
+  in tiers - Basic (free trial), Scale (custom), and Enterprise (custom) - metered
+  primarily by seats, number of AI applications, and DPUs (Data Processing Units)
+  per month. Published numeric limits vary and most commercial pricing is quote-based,
+  so monetary values are not reconciled in this artifact.
+notes: >-
+  Open-source packages are free under AGPL-3.0 (pip install deepchecks). Cloud
+  LLM Evaluation tier prices are largely quote-based; verify seats, applications,
+  DPU allotments, and data retention against the live pricing page on reconciliation.
+sources:
+- https://www.deepchecks.com/pricing/
+- https://llmdocs.deepchecks.com
+- https://github.com/deepchecks/deepchecks
+plans:
+- id: deepchecks-open-source
+  name: Open Source
+  type: free
+  description: >-
+    The deepchecks open-source Python packages for continuous validation of
+    tabular, computer-vision, and LLM/NLP data and models. Free and self-hosted
+    under the AGPL-3.0 license.
+  entries:
+  - label: Open-Source Library
+    name: open_source
+    type: free
+    metric: usage
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: free (AGPL-3.0)
+    userMultiplied: false
+  elements:
+  - name: Tabular Testing
+  - name: Computer Vision Testing
+  - name: NLP / LLM Testing
+- id: deepchecks-basic
+  name: Basic
+  type: subscription
+  description: >-
+    Entry tier of the hosted LLM Evaluation cloud, offered with a free trial.
+    Ideal for small teams and startups.
+  entries:
+  - label: Seats
+    name: seats
+    type: included
+    metric: seats
+    limit: 3
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: free trial
+    userMultiplied: false
+  - label: AI Applications
+    name: applications
+    type: included
+    metric: applications
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: free trial
+    userMultiplied: false
+  - label: DPUs per Month
+    name: dpus
+    type: included
+    metric: dpus
+    limit: 5000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: free trial
+    userMultiplied: false
+  elements:
+  - name: LLM Evaluation
+  - name: Interaction Logging
+  - name: 3 Month Data Retention
+- id: deepchecks-scale
+  name: Scale
+  type: subscription
+  description: >-
+    For teams running several production-grade AI applications. Adds premium
+    support, premium compliance, and guided onboarding.
+  entries:
+  - label: Seats
+    name: seats
+    type: included
+    metric: seats
+    limit: 5
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  - label: AI Applications
+    name: applications
+    type: included
+    metric: applications
+    limit: 3
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  - label: DPUs per Month
+    name: dpus
+    type: included
+    metric: dpus
+    limit: 20000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Premium Support
+  - name: Premium Compliance
+  - name: Guided Platform Onboarding
+- id: deepchecks-enterprise
+  name: Enterprise
+  type: enterprise
+  description: >-
+    For companies with high data volumes and advanced security needs. Custom
+    seats, applications, and DPUs, with enterprise-grade security, enterprise
+    support, and a dedicated customer success team. Includes dedicated / single-tenant,
+    VPC, on-prem, and bare-metal deployment options.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Custom Seats / Applications / DPUs
+  - name: Enterprise-Grade Security
+  - name: Dedicated Customer Success Team
+  - name: VPC / On-Prem / Bare-Metal Deployment
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
