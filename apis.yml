@@ -139,6 +139,10 @@ apis:
     of tabular, computer-vision, and LLM/NLP data and models. Distributed via PyPI
     (pip install deepchecks); a Python library rather than a hosted HTTP API.
 common:
+- type: DomainSecurity
+  url: security/deepchecks-domain-security.yml
+- type: Authentication
+  url: authentication/deepchecks-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/deepchecks
 - type: LinkedIn
