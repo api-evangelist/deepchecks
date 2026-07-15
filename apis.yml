@@ -139,6 +139,8 @@ apis:
     of tabular, computer-vision, and LLM/NLP data and models. Distributed via PyPI
     (pip install deepchecks); a Python library rather than a hosted HTTP API.
 common:
+- type: AgenticAccess
+  url: agentic-access/deepchecks-agentic-access.yml
 - type: DomainSecurity
   url: security/deepchecks-domain-security.yml
 - type: Authentication
