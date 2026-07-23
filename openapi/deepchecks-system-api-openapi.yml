@@ -1,0 +1,43 @@
+openapi: 3.0.1
+info:
+  title: Deepchecks LLM Evaluation Application Versions System API
+  description: REST API for the Deepchecks LLM Evaluation cloud platform. Log raw LLM interactions to an application version for evaluation, manage applications and their versions, retrieve enriched interactions with their computed properties and annotations, and configure LLM property definitions. Authentication uses a Deepchecks API token passed as a Bearer token in the Authorization header.
+  termsOfService: https://www.deepchecks.com/terms-of-use/
+  contact:
+    name: Deepchecks Support
+    url: https://www.deepchecks.com
+  version: v1
+servers:
+- url: https://app.llm.deepchecks.com
+  description: Deepchecks LLM Evaluation cloud
+security:
+- BearerAuth: []
+tags:
+- name: System
+  description: Backend metadata.
+paths:
+  /api/v1/backend-version:
+    post:
+      operationId: getBackendVersion
+      tags:
+      - System
+      summary: Retrieve the backend version.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendVersion'
+components:
+  schemas:
+    BackendVersion:
+      type: object
+      properties:
+        version:
+          type: string
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Deepchecks API token, generated in the LLM Evaluation UI.

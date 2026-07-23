@@ -1,0 +1,241 @@
+openapi: 3.0.1
+info:
+  title: Deepchecks LLM Evaluation Application Versions Interactions API
+  description: REST API for the Deepchecks LLM Evaluation cloud platform. Log raw LLM interactions to an application version for evaluation, manage applications and their versions, retrieve enriched interactions with their computed properties and annotations, and configure LLM property definitions. Authentication uses a Deepchecks API token passed as a Bearer token in the Authorization header.
+  termsOfService: https://www.deepchecks.com/terms-of-use/
+  contact:
+    name: Deepchecks Support
+    url: https://www.deepchecks.com
+  version: v1
+servers:
+- url: https://app.llm.deepchecks.com
+  description: Deepchecks LLM Evaluation cloud
+security:
+- BearerAuth: []
+tags:
+- name: Interactions
+  description: LLM interaction logging and retrieval.
+paths:
+  /api/v1/application-versions/{application_version_id}/interactions:
+    parameters:
+    - name: application_version_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    post:
+      operationId: createInteractions
+      tags:
+      - Interactions
+      summary: Log a batch of interactions.
+      description: Logs one or more raw LLM interactions (user input, model output, information-retrieval context, full prompt, history, and custom properties) to the given application version for evaluation.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/InteractionInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateInteractionsResponse'
+    get:
+      operationId: getInteractionsByFilter
+      tags:
+      - Interactions
+      summary: Get interactions by filter.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Interaction'
+    delete:
+      operationId: deleteInteractions
+      tags:
+      - Interactions
+      summary: Delete interactions.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteInteractionsRequest'
+      responses:
+        '200':
+          description: OK
+  /api/v1/application-versions/{application_version_id}/interactions/complete-status:
+    post:
+      operationId: getInteractionCompletionStatus
+      tags:
+      - Interactions
+      summary: Get interaction completion status.
+      description: Returns the evaluation/processing completion status for interactions.
+      parameters:
+      - name: application_version_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompletionStatusRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompletionStatusResponse'
+  /api/v1/application-versions/{application_version_id}/interactions/download:
+    get:
+      operationId: downloadInteractionsByFilter
+      tags:
+      - Interactions
+      summary: Download all interactions by filter.
+      description: Downloads interactions enriched with computed properties, topics, and annotations for the given application version.
+      parameters:
+      - name: application_version_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Interaction'
+components:
+  schemas:
+    CreateInteractionsResponse:
+      type: object
+      properties:
+        created:
+          type: integer
+        interaction_ids:
+          type: array
+          items:
+            type: integer
+    DeleteInteractionsRequest:
+      type: object
+      properties:
+        user_interaction_ids:
+          type: array
+          items:
+            type: string
+    CompletionStatusResponse:
+      type: object
+      properties:
+        completed:
+          type: integer
+        pending:
+          type: integer
+        statuses:
+          type: array
+          items:
+            type: object
+            properties:
+              user_interaction_id:
+                type: string
+              status:
+                type: string
+    InteractionInput:
+      type: object
+      properties:
+        user_interaction_id:
+          type: string
+          description: Caller-supplied unique id for the interaction.
+        input:
+          type: string
+          description: The user input / prompt.
+        output:
+          type: string
+          description: The model output / response.
+        full_prompt:
+          type: string
+        information_retrieval:
+          type: array
+          items:
+            type: string
+          description: Retrieved context documents.
+        history:
+          type: string
+        annotation:
+          type: string
+          enum:
+          - good
+          - bad
+          - unknown
+        custom_props:
+          type: object
+          additionalProperties: true
+        metadata:
+          type: object
+          additionalProperties: true
+        started_at:
+          type: string
+          format: date-time
+        finished_at:
+          type: string
+          format: date-time
+    CompletionStatusRequest:
+      type: object
+      properties:
+        user_interaction_ids:
+          type: array
+          items:
+            type: string
+    Interaction:
+      type: object
+      properties:
+        id:
+          type: integer
+        user_interaction_id:
+          type: string
+        input:
+          type: string
+        output:
+          type: string
+        annotation:
+          type: string
+        annotation_reason:
+          type: string
+        topic:
+          type: string
+        properties:
+          type: object
+          additionalProperties: true
+        created_at:
+          type: string
+          format: date-time
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Deepchecks API token, generated in the LLM Evaluation UI.

@@ -1,0 +1,59 @@
+openapi: 3.0.1
+info:
+  title: Deepchecks LLM Evaluation Application Versions Properties API
+  description: REST API for the Deepchecks LLM Evaluation cloud platform. Log raw LLM interactions to an application version for evaluation, manage applications and their versions, retrieve enriched interactions with their computed properties and annotations, and configure LLM property definitions. Authentication uses a Deepchecks API token passed as a Bearer token in the Authorization header.
+  termsOfService: https://www.deepchecks.com/terms-of-use/
+  contact:
+    name: Deepchecks Support
+    url: https://www.deepchecks.com
+  version: v1
+servers:
+- url: https://app.llm.deepchecks.com
+  description: Deepchecks LLM Evaluation cloud
+security:
+- BearerAuth: []
+tags:
+- name: Properties
+  description: LLM property definitions.
+paths:
+  /api/v1/applications/{app_id}/llm-prop-definitions:
+    put:
+      operationId: updateLlmPropsDefinitions
+      tags:
+      - Properties
+      summary: Update LLM property display names.
+      description: Updates the display names and definitions for LLM properties on an application.
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LlmPropsDefinitions'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    LlmPropsDefinitions:
+      type: object
+      properties:
+        definitions:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              display_name:
+                type: string
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Deepchecks API token, generated in the LLM Evaluation UI.
