@@ -1,0 +1,24 @@
+{
+  "provider": "deepchecks",
+  "sources": [
+    "deepchecks-application-versions-api-openapi.yml",
+    "deepchecks-applications-api-openapi.yml",
+    "deepchecks-interactions-api-openapi.yml",
+    "deepchecks-properties-api-openapi.yml",
+    "deepchecks-spans-api-openapi.yml",
+    "deepchecks-system-api-openapi.yml"
+  ],
+  "outputs": [
+    "deepchecks-application-versions-api-openapi.yml",
+    "deepchecks-applications-api-openapi.yml",
+    "deepchecks-interactions-api-openapi.yml",
+    "deepchecks-properties-api-openapi.yml",
+    "deepchecks-spans-api-openapi.yml",
+    "deepchecks-system-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
