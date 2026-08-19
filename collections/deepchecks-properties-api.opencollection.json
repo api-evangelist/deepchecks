@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Deepchecks LLM Evaluation Application Versions Properties API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Properties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update LLM property display names.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.llm.deepchecks.com/api/v1/applications/:app_id/llm-prop-definitions",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the display names and definitions for LLM properties on an application."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

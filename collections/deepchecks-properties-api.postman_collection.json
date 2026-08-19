@@ -1,0 +1,156 @@
+{
+  "item": [
+    {
+      "id": "1983491b-1467-49ae-948c-21a0aaa87a26",
+      "name": "Properties",
+      "description": {
+        "content": "LLM property definitions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "472e9389-0ee0-429d-b12b-e2a89fb44d70",
+          "name": "Update LLM property display names.",
+          "request": {
+            "name": "Update LLM property display names.",
+            "description": {
+              "content": "Updates the display names and definitions for LLM properties on an application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "applications",
+                ":app_id",
+                "llm-prop-definitions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "app_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"definitions\": {\n    \"type\": \"array\",\n    \"maxItems\": 2,\n    \"items\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"name\": {\n          \"type\": \"string\",\n          \"default\": \"<string>\"\n        },\n        \"display_name\": {\n          \"type\": \"string\",\n          \"default\": \"<string>\"\n        }\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0d9650f8-3099-4015-89d4-aa6c0c301573",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "applications",
+                    ":app_id",
+                    "llm-prop-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "app_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"definitions\": {\n    \"type\": \"array\",\n    \"maxItems\": 2,\n    \"minItems\": 2,\n    \"items\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"name\": {\n          \"type\": \"string\",\n          \"default\": \"<string>\"\n        },\n        \"display_name\": {\n          \"type\": \"string\",\n          \"default\": \"<string>\"\n        }\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.llm.deepchecks.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "eb42c2f5-da63-4b3d-af72-8c39d7665151",
+    "name": "Deepchecks LLM Evaluation Application Versions Properties API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Deepchecks LLM Evaluation cloud platform. Log raw LLM interactions to an application version for evaluation, manage applications and their versions, retrieve enriched interactions with their computed properties and annotations, and configure LLM property definitions. Authentication uses a Deepchecks API token passed as a Bearer token in the Authorization header.\n\nContact Support:\n Name: Deepchecks Support",
+      "type": "text/plain"
+    }
+  }
+}

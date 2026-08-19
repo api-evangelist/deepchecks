@@ -1,0 +1,136 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Deepchecks LLM Evaluation Application Versions Interactions API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Interactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get interactions by filter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/:application_version_id/interactions",
+            "params": [
+              {
+                "name": "application_version_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get interactions by filter."
+        },
+        {
+          "info": {
+            "name": "Log a batch of interactions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/:application_version_id/interactions",
+            "params": [
+              {
+                "name": "application_version_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Logs one or more raw LLM interactions (user input, model output, information-retrieval context, full prompt, history, and custom properties) to the given application version for evaluation."
+        },
+        {
+          "info": {
+            "name": "Delete interactions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/:application_version_id/interactions",
+            "params": [
+              {
+                "name": "application_version_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete interactions."
+        },
+        {
+          "info": {
+            "name": "Get interaction completion status.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/:application_version_id/interactions/complete-status",
+            "params": [
+              {
+                "name": "application_version_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns the evaluation/processing completion status for interactions."
+        },
+        {
+          "info": {
+            "name": "Download all interactions by filter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.llm.deepchecks.com/api/v1/application-versions/:application_version_id/interactions/download",
+            "params": [
+              {
+                "name": "application_version_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Downloads interactions enriched with computed properties, topics, and annotations for the given application version."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

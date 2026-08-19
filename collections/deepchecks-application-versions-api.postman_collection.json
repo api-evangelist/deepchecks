@@ -1,0 +1,231 @@
+{
+  "item": [
+    {
+      "id": "32646f8b-ca49-4135-83e2-48c49027bd27",
+      "name": "Application Versions",
+      "description": {
+        "content": "Versions of an evaluation application.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b4908c5b-db3f-49b4-820a-8d3f2436ac2e",
+          "name": "List application versions.",
+          "request": {
+            "name": "List application versions.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "application-versions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "app_name",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "813b0373-371e-4f19-9c34-990770cebd3b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "application-versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "app_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 4821,\n    \"application_id\": 2703,\n    \"name\": \"string\",\n    \"created_at\": \"1980-11-04T13:17:57.631Z\"\n  },\n  {\n    \"id\": 4099,\n    \"application_id\": 5948,\n    \"name\": \"string\",\n    \"created_at\": \"1992-01-06T11:40:54.347Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a1c7cf6-0899-4ed1-87e1-f01f28ec54c9",
+          "name": "Create an application version.",
+          "request": {
+            "name": "Create an application version.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "application-versions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"application_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8bc9e5d6-6aaa-418e-85f1-f528b23eef5a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "application-versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"application_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2560,\n  \"application_id\": 7627,\n  \"name\": \"string\",\n  \"created_at\": \"1988-04-01T18:46:13.657Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.llm.deepchecks.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "deaa8826-cb99-4fed-8924-b48b0ca9bdd5",
+    "name": "Deepchecks LLM Evaluation Application Versions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Deepchecks LLM Evaluation cloud platform. Log raw LLM interactions to an application version for evaluation, manage applications and their versions, retrieve enriched interactions with their computed properties and annotations, and configure LLM property definitions. Authentication uses a Deepchecks API token passed as a Bearer token in the Authorization header.\n\nContact Support:\n Name: Deepchecks Support",
+      "type": "text/plain"
+    }
+  }
+}

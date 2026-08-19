@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Deepchecks LLM Evaluation Application Versions Applications API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List applications.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.llm.deepchecks.com/api/v1/applications"
+          },
+          "docs": "List applications."
+        },
+        {
+          "info": {
+            "name": "Create an application.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.llm.deepchecks.com/api/v1/applications",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an application."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

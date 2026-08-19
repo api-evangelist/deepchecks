@@ -1,0 +1,624 @@
+{
+  "item": [
+    {
+      "id": "6ee7e836-fa0d-46c7-9c9d-a5ee601d962d",
+      "name": "Interactions",
+      "description": {
+        "content": "LLM interaction logging and retrieval.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "39688f60-ab31-4db4-8357-478cbcc8c896",
+          "name": "Log a batch of interactions.",
+          "request": {
+            "name": "Log a batch of interactions.",
+            "description": {
+              "content": "Logs one or more raw LLM interactions (user input, model output, information-retrieval context, full prompt, history, and custom properties) to the given application version for evaluation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "application-versions",
+                ":application_version_id",
+                "interactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "application_version_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"user_interaction_id\": \"<string>\",\n    \"input\": \"<string>\",\n    \"output\": \"<string>\",\n    \"full_prompt\": \"<string>\",\n    \"information_retrieval\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"history\": \"<string>\",\n    \"annotation\": \"<string>\",\n    \"custom_props\": {\n      \"key_0\": \"string\"\n    },\n    \"metadata\": {\n      \"key_0\": true,\n      \"key_1\": \"string\"\n    },\n    \"started_at\": \"<dateTime>\",\n    \"finished_at\": \"<dateTime>\"\n  },\n  {\n    \"user_interaction_id\": \"<string>\",\n    \"input\": \"<string>\",\n    \"output\": \"<string>\",\n    \"full_prompt\": \"<string>\",\n    \"information_retrieval\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"history\": \"<string>\",\n    \"annotation\": \"<string>\",\n    \"custom_props\": {\n      \"key_0\": false,\n      \"key_1\": \"string\"\n    },\n    \"metadata\": {\n      \"key_0\": 4505,\n      \"key_1\": 5591,\n      \"key_2\": 1520\n    },\n    \"started_at\": \"<dateTime>\",\n    \"finished_at\": \"<dateTime>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7929afb5-3166-426f-a6fc-de3ae48f1a91",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "application-versions",
+                    ":application_version_id",
+                    "interactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "application_version_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"user_interaction_id\": \"<string>\",\n    \"input\": \"<string>\",\n    \"output\": \"<string>\",\n    \"full_prompt\": \"<string>\",\n    \"information_retrieval\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"history\": \"<string>\",\n    \"annotation\": \"<string>\",\n    \"custom_props\": {\n      \"key_0\": 8392.474867831708\n    },\n    \"metadata\": {\n      \"key_0\": false,\n      \"key_1\": true,\n      \"key_2\": 2745.6741233839034,\n      \"key_3\": 2125\n    },\n    \"started_at\": \"<dateTime>\",\n    \"finished_at\": \"<dateTime>\"\n  },\n  {\n    \"user_interaction_id\": \"<string>\",\n    \"input\": \"<string>\",\n    \"output\": \"<string>\",\n    \"full_prompt\": \"<string>\",\n    \"information_retrieval\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"history\": \"<string>\",\n    \"annotation\": \"<string>\",\n    \"custom_props\": {\n      \"key_0\": 1270,\n      \"key_1\": false\n    },\n    \"metadata\": {\n      \"key_0\": false\n    },\n    \"started_at\": \"<dateTime>\",\n    \"finished_at\": \"<dateTime>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": 5726,\n  \"interaction_ids\": [\n    6603,\n    3074\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "746fdbb6-7d44-453e-8e5b-50d4f03baed4",
+          "name": "Get interactions by filter.",
+          "request": {
+            "name": "Get interactions by filter.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "application-versions",
+                ":application_version_id",
+                "interactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "application_version_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90b58989-2b91-4fe2-b0ff-aee18616475e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "application-versions",
+                    ":application_version_id",
+                    "interactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "application_version_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 1628,\n    \"user_interaction_id\": \"string\",\n    \"input\": \"string\",\n    \"output\": \"string\",\n    \"annotation\": \"string\",\n    \"annotation_reason\": \"string\",\n    \"topic\": \"string\",\n    \"properties\": {\n      \"key_0\": 1245,\n      \"key_1\": 3299.631218598418,\n      \"key_2\": \"string\"\n    },\n    \"created_at\": \"1996-07-15T14:23:35.670Z\"\n  },\n  {\n    \"id\": 7119,\n    \"user_interaction_id\": \"string\",\n    \"input\": \"string\",\n    \"output\": \"string\",\n    \"annotation\": \"string\",\n    \"annotation_reason\": \"string\",\n    \"topic\": \"string\",\n    \"properties\": {\n      \"key_0\": 5555.64728191824\n    },\n    \"created_at\": \"2004-08-17T07:06:20.263Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cff8fd85-9cf5-4783-9eb7-aeaa60cac629",
+          "name": "Delete interactions.",
+          "request": {
+            "name": "Delete interactions.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "application-versions",
+                ":application_version_id",
+                "interactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "application_version_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_interaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4ecf7672-5e9a-4cab-ab1a-876969783d8f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "application-versions",
+                    ":application_version_id",
+                    "interactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "application_version_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user_interaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90b61b04-4d4b-42ee-8229-1c5436b5744f",
+          "name": "Get interaction completion status.",
+          "request": {
+            "name": "Get interaction completion status.",
+            "description": {
+              "content": "Returns the evaluation/processing completion status for interactions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "application-versions",
+                ":application_version_id",
+                "interactions",
+                "complete-status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "application_version_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_interaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b0ac4f16-712c-4645-94c7-2a9022189993",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "application-versions",
+                    ":application_version_id",
+                    "interactions",
+                    "complete-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "application_version_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user_interaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"completed\": 2140,\n  \"pending\": 8595,\n  \"statuses\": [\n    {\n      \"user_interaction_id\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"user_interaction_id\": \"string\",\n      \"status\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b022b562-bd79-41ed-b78c-4958ea8f51c5",
+          "name": "Download all interactions by filter.",
+          "request": {
+            "name": "Download all interactions by filter.",
+            "description": {
+              "content": "Downloads interactions enriched with computed properties, topics, and annotations for the given application version.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "application-versions",
+                ":application_version_id",
+                "interactions",
+                "download"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "application_version_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f9960f2-326e-488c-ad0e-f039dd4e0166",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "application-versions",
+                    ":application_version_id",
+                    "interactions",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "application_version_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 1628,\n    \"user_interaction_id\": \"string\",\n    \"input\": \"string\",\n    \"output\": \"string\",\n    \"annotation\": \"string\",\n    \"annotation_reason\": \"string\",\n    \"topic\": \"string\",\n    \"properties\": {\n      \"key_0\": 1245,\n      \"key_1\": 3299.631218598418,\n      \"key_2\": \"string\"\n    },\n    \"created_at\": \"1996-07-15T14:23:35.670Z\"\n  },\n  {\n    \"id\": 7119,\n    \"user_interaction_id\": \"string\",\n    \"input\": \"string\",\n    \"output\": \"string\",\n    \"annotation\": \"string\",\n    \"annotation_reason\": \"string\",\n    \"topic\": \"string\",\n    \"properties\": {\n      \"key_0\": 5555.64728191824\n    },\n    \"created_at\": \"2004-08-17T07:06:20.263Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.llm.deepchecks.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2da384ed-b640-4201-8022-24e9100ce76c",
+    "name": "Deepchecks LLM Evaluation Application Versions Interactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Deepchecks LLM Evaluation cloud platform. Log raw LLM interactions to an application version for evaluation, manage applications and their versions, retrieve enriched interactions with their computed properties and annotations, and configure LLM property definitions. Authentication uses a Deepchecks API token passed as a Bearer token in the Authorization header.\n\nContact Support:\n Name: Deepchecks Support",
+      "type": "text/plain"
+    }
+  }
+}

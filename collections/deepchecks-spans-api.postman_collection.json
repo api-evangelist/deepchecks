@@ -1,0 +1,123 @@
+{
+  "item": [
+    {
+      "id": "6ff26b8c-f4c3-4484-b5f9-710547b23b67",
+      "name": "Spans",
+      "description": {
+        "content": "Raw tracing spans.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "904c4c34-da04-4b81-8e25-7a850db313f6",
+          "name": "Get raw spans by filter.",
+          "request": {
+            "name": "Get raw spans by filter.",
+            "description": {
+              "content": "Retrieves raw tracing spans captured for interactions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "spans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f1b92232-3208-4306-b936-db36770eaad0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "spans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"trace_id\": \"string\",\n    \"name\": \"string\",\n    \"started_at\": \"1952-11-11T09:38:09.853Z\",\n    \"finished_at\": \"1950-03-17T13:58:27.426Z\",\n    \"attributes\": {\n      \"key_0\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"trace_id\": \"string\",\n    \"name\": \"string\",\n    \"started_at\": \"2002-04-01T04:07:15.128Z\",\n    \"finished_at\": \"2016-08-22T18:58:57.719Z\",\n    \"attributes\": {\n      \"key_0\": 4585.285725715162,\n      \"key_1\": \"string\",\n      \"key_2\": 4351.596655627339\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.llm.deepchecks.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "12885d76-503e-4fdd-a69a-c5e3a6df6c8a",
+    "name": "Deepchecks LLM Evaluation Application Versions Spans API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Deepchecks LLM Evaluation cloud platform. Log raw LLM interactions to an application version for evaluation, manage applications and their versions, retrieve enriched interactions with their computed properties and annotations, and configure LLM property definitions. Authentication uses a Deepchecks API token passed as a Bearer token in the Authorization header.\n\nContact Support:\n Name: Deepchecks Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Deepchecks LLM Evaluation Application Versions Spans API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Spans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get raw spans by filter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.llm.deepchecks.com/api/v1/spans"
+          },
+          "docs": "Retrieves raw tracing spans captured for interactions."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
