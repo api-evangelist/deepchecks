@@ -22,6 +22,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/deepchecks.png
 tags:
+- Artificial Intelligence
+- LLM
+- Evaluation
+- Testing
+- Monitoring
+tags_raw:
 - AI
 - LLM
 - Evaluation
@@ -34,6 +40,11 @@ apis:
 - aid: deepchecks:open-source-testing
   name: Deepchecks Open-Source Testing
   tags:
+  - Open-Source
+  - Testing
+  - Validation
+  - Python
+  tags_raw:
   - Open Source
   - Testing
   - Validation
@@ -76,6 +87,8 @@ apis:
   humanURL: https://llmdocs.deepchecks.com/reference
   baseURL: https://app.llm.deepchecks.com/api/v1
   tags:
+  - Application
+  tags_raw:
   - Applications
   properties:
   - type: OpenAPI
