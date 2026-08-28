@@ -7,6 +7,18 @@ description: Deepchecks is an ML and LLM testing, evaluation, and monitoring pla
   managing applications and versions, retrieving annotations, and configuring evaluation
   properties, while its open-source Python packages provide continuous validation of
   tabular, computer-vision, and LLM data and models.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
