@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Deepchecks LLM Evaluation Application Versions Interactions API
+  title: Deepchecks LLM Evaluation Interactions API
   description: REST API for the Deepchecks LLM Evaluation cloud platform. Log raw LLM interactions to an application version for evaluation, manage applications and their versions, retrieve enriched interactions with their computed properties and annotations, and configure LLM property definitions. Authentication uses a Deepchecks API token passed as a Bearer token in the Authorization header.
   termsOfService: https://www.deepchecks.com/terms-of-use/
   contact:
@@ -27,7 +27,7 @@ paths:
       operationId: createInteractions
       tags:
       - Interactions
-      summary: Log a batch of interactions.
+      summary: Log a batch of interactions
       description: Logs one or more raw LLM interactions (user input, model output, information-retrieval context, full prompt, history, and custom properties) to the given application version for evaluation.
       requestBody:
         required: true
@@ -48,7 +48,7 @@ paths:
       operationId: getInteractionsByFilter
       tags:
       - Interactions
-      summary: Get interactions by filter.
+      summary: Get interactions by filter
       parameters:
       - name: limit
         in: query
@@ -73,7 +73,7 @@ paths:
       operationId: deleteInteractions
       tags:
       - Interactions
-      summary: Delete interactions.
+      summary: Delete interactions
       requestBody:
         required: false
         content:
@@ -88,7 +88,7 @@ paths:
       operationId: getInteractionCompletionStatus
       tags:
       - Interactions
-      summary: Get interaction completion status.
+      summary: Get interaction completion status
       description: Returns the evaluation/processing completion status for interactions.
       parameters:
       - name: application_version_id
@@ -114,7 +114,7 @@ paths:
       operationId: downloadInteractionsByFilter
       tags:
       - Interactions
-      summary: Download all interactions by filter.
+      summary: Download all interactions by filter
       description: Downloads interactions enriched with computed properties, topics, and annotations for the given application version.
       parameters:
       - name: application_version_id
@@ -133,22 +133,6 @@ paths:
                   $ref: '#/components/schemas/Interaction'
 components:
   schemas:
-    CreateInteractionsResponse:
-      type: object
-      properties:
-        created:
-          type: integer
-        interaction_ids:
-          type: array
-          items:
-            type: integer
-    DeleteInteractionsRequest:
-      type: object
-      properties:
-        user_interaction_ids:
-          type: array
-          items:
-            type: string
     CompletionStatusResponse:
       type: object
       properties:
@@ -165,6 +149,52 @@ components:
                 type: string
               status:
                 type: string
+    Interaction:
+      type: object
+      properties:
+        id:
+          type: integer
+        user_interaction_id:
+          type: string
+        input:
+          type: string
+        output:
+          type: string
+        annotation:
+          type: string
+        annotation_reason:
+          type: string
+        topic:
+          type: string
+        properties:
+          type: object
+          additionalProperties: true
+        created_at:
+          type: string
+          format: date-time
+    CompletionStatusRequest:
+      type: object
+      properties:
+        user_interaction_ids:
+          type: array
+          items:
+            type: string
+    DeleteInteractionsRequest:
+      type: object
+      properties:
+        user_interaction_ids:
+          type: array
+          items:
+            type: string
+    CreateInteractionsResponse:
+      type: object
+      properties:
+        created:
+          type: integer
+        interaction_ids:
+          type: array
+          items:
+            type: integer
     InteractionInput:
       type: object
       properties:
@@ -202,36 +232,6 @@ components:
           type: string
           format: date-time
         finished_at:
-          type: string
-          format: date-time
-    CompletionStatusRequest:
-      type: object
-      properties:
-        user_interaction_ids:
-          type: array
-          items:
-            type: string
-    Interaction:
-      type: object
-      properties:
-        id:
-          type: integer
-        user_interaction_id:
-          type: string
-        input:
-          type: string
-        output:
-          type: string
-        annotation:
-          type: string
-        annotation_reason:
-          type: string
-        topic:
-          type: string
-        properties:
-          type: object
-          additionalProperties: true
-        created_at:
           type: string
           format: date-time
   securitySchemes:

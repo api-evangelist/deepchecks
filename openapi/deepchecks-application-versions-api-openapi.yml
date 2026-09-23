@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
   title: Deepchecks LLM Evaluation Application Versions API
   description: REST API for the Deepchecks LLM Evaluation cloud platform. Log raw LLM interactions to an application version for evaluation, manage applications and their versions, retrieve enriched interactions with their computed properties and annotations, and configure LLM property definitions. Authentication uses a Deepchecks API token passed as a Bearer token in the Authorization header.
@@ -21,7 +21,7 @@ paths:
       operationId: listApplicationVersions
       tags:
       - Application Versions
-      summary: List application versions.
+      summary: List application versions
       parameters:
       - name: app_name
         in: query
@@ -41,7 +41,7 @@ paths:
       operationId: createApplicationVersion
       tags:
       - Application Versions
-      summary: Create an application version.
+      summary: Create an application version
       requestBody:
         required: true
         content:
