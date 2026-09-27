@@ -8,16 +8,21 @@ description: Deepchecks is an ML and LLM testing, evaluation, and monitoring pla
   properties, while its open-source Python packages provide continuous validation of
   tabular, computer-vision, and LLM data and models.
 deliveryModel:
-  model: saas
-  open_source: false
+  model: unknown
+  license_evidence:
+    repo: deepchecks/deepchecks
+    spdx: NOASSERTION
+    stars: 4056
+  open_source: unknown
   commercial: true
   callable_host: false
-  label: Hosted service · you call their endpoint
-  confidence: medium
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
   source:
   - openapi
   - pricing
-  generated: '2026-08-28'
+  - repository-unlicensed
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -33,6 +38,9 @@ accessModel:
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/deepchecks.png
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-09-25
 tags:
 - Artificial Intelligence
 - LLM
@@ -52,7 +60,7 @@ apis:
 - aid: deepchecks:open-source-testing
   name: Deepchecks Open-Source Testing
   tags:
-  - Open-Source
+  - Open Source
   - Testing
   - Validation
   - Python
@@ -61,6 +69,7 @@ apis:
   - Testing
   - Validation
   - Python
+  - Open-Source
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://github.com/deepchecks/deepchecks
   baseURL: https://github.com/deepchecks/deepchecks

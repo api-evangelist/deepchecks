@@ -51,18 +51,6 @@ paths:
                 $ref: '#/components/schemas/Application'
 components:
   schemas:
-    CreateApplicationRequest:
-      type: object
-      required:
-      - name
-      - kind
-      properties:
-        name:
-          type: string
-        kind:
-          type: string
-        description:
-          type: string
     Application:
       type: object
       properties:
@@ -76,6 +64,18 @@ components:
         created_at:
           type: string
           format: date-time
+    CreateApplicationRequest:
+      type: object
+      required:
+      - name
+      - kind
+      properties:
+        name:
+          type: string
+        kind:
+          type: string
+        description:
+          type: string
   securitySchemes:
     BearerAuth:
       type: http
