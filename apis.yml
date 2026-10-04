@@ -205,6 +205,9 @@ apis:
   - type: GitHub
     url: https://github.com/deepchecks
 common:
+- type: CapabilityMap
+  url: capabilities/deepchecks-capability-edges.yml
+  name: Deepchecks Business Capability Map
 - type: AgenticAccess
   url: agentic-access/deepchecks-agentic-access.yml
 - type: DomainSecurity
