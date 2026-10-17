@@ -57,18 +57,6 @@ paths:
                 $ref: '#/components/schemas/ApplicationVersion'
 components:
   schemas:
-    CreateApplicationVersionRequest:
-      type: object
-      required:
-      - application_id
-      - name
-      properties:
-        application_id:
-          type: integer
-        name:
-          type: string
-        description:
-          type: string
     ApplicationVersion:
       type: object
       properties:
@@ -81,6 +69,18 @@ components:
         created_at:
           type: string
           format: date-time
+    CreateApplicationVersionRequest:
+      type: object
+      required:
+      - application_id
+      - name
+      properties:
+        application_id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
   securitySchemes:
     BearerAuth:
       type: http

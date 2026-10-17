@@ -172,14 +172,23 @@ components:
         finished_at:
           type: string
           format: date-time
-    CompletionStatusRequest:
+    CreateInteractionsResponse:
+      type: object
+      properties:
+        created:
+          type: integer
+        interaction_ids:
+          type: array
+          items:
+            type: integer
+    DeleteInteractionsRequest:
       type: object
       properties:
         user_interaction_ids:
           type: array
           items:
             type: string
-    DeleteInteractionsRequest:
+    CompletionStatusRequest:
       type: object
       properties:
         user_interaction_ids:
@@ -225,15 +234,6 @@ components:
         created_at:
           type: string
           format: date-time
-    CreateInteractionsResponse:
-      type: object
-      properties:
-        created:
-          type: integer
-        interaction_ids:
-          type: array
-          items:
-            type: integer
   securitySchemes:
     BearerAuth:
       type: http
