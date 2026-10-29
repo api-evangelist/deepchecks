@@ -1,4 +1,4 @@
-# Deepchecks (deepchecks)
+# Deepchecks
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,142 +66,126 @@
 
 Deepchecks is an ML and LLM testing, evaluation, and monitoring platform. Its cloud LLM Evaluation product exposes a REST API for logging LLM interactions, managing applications and versions, retrieving annotations, and configuring evaluation properties, while its open-source Python packages provide continuous validation of tabular, computer-vision, and LLM data and models.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/deepchecks/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/deepchecks/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · LLM · Evaluation · Testing · Monitoring
 
-## Tags
+## Deepchecks on APIs.io
 
-- AI
-- LLM
-- Evaluation
-- Testing
-- Monitoring
+Everything profiled for Deepchecks is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/deepchecks/](https://apis.io/providers/deepchecks/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (7)
 
-- **Created:** 2026-06-20
-- **Modified:** 2026-06-20
+- [Deepchecks Open-Source Testing](https://apis.io/apis/deepchecks/open-source-testing/) — The AGPL-3.0 licensed open-source Python package for continuous validation of tabular, computer-vision, and LLM/NLP data and models. Distributed via PyPI…
+- [Deepchecks Application Versions API](https://apis.io/apis/deepchecks/deepchecks-application-versions-api/) — Versions of an evaluation application.
+- [Deepchecks Applications API](https://apis.io/apis/deepchecks/deepchecks-applications-api/) — Evaluation applications.
+- [Deepchecks Interactions API](https://apis.io/apis/deepchecks/deepchecks-interactions-api/) — LLM interaction logging and retrieval.
+- [Deepchecks Properties API](https://apis.io/apis/deepchecks/deepchecks-properties-api/) — LLM property definitions.
+- [Deepchecks Spans API](https://apis.io/apis/deepchecks/deepchecks-spans-api/) — Raw tracing spans.
+- [Deepchecks System API](https://apis.io/apis/deepchecks/deepchecks-system-api/) — Backend metadata.
 
-## APIs
+### Published properties
 
-### Deepchecks LLM Interactions / Logging API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Logs raw LLM interactions (input, output, context, history, and metadata) to a specific application version for evaluation, retrieves enriched interactions by filter, downloads interactions, deletes interactions, and checks interaction completion status.
+#### Agentic access (1)
 
-- **Human URL:** [https://llmdocs.deepchecks.com/reference](https://llmdocs.deepchecks.com/reference)
-- **Base URL:** `https://app.llm.deepchecks.com/api/v1`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Deepchecks Agentic Access](https://apis.io/agentic-access/deepchecks/deepchecks-agentic-access/)
 
-- Interactions
-- Logging
-- LLM
-- Evaluation
+#### Collections (7)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://llmdocs.deepchecks.com/docs/deepchecks-sdk)
-- [API Reference](https://llmdocs.deepchecks.com/reference)
-- [OpenAPI](openapi/deepchecks-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/deepchecks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/deepchecks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [GitHub](https://github.com/deepchecks)
+- [Deepchecks LLM Evaluation API](https://apis.io/collections/deepchecks/open-deepchecks/)
+- [Deepchecks LLM Evaluation Application Versions API](https://apis.io/collections/deepchecks/open-deepchecks-application-versions-api/)
+- [Deepchecks LLM Evaluation Application Versions Applications API](https://apis.io/collections/deepchecks/open-deepchecks-applications-api/)
+- [Deepchecks LLM Evaluation Application Versions Interactions API](https://apis.io/collections/deepchecks/open-deepchecks-interactions-api/)
+- [Deepchecks LLM Evaluation Application Versions Properties API](https://apis.io/collections/deepchecks/open-deepchecks-properties-api/)
+- [Deepchecks LLM Evaluation Application Versions Spans API](https://apis.io/collections/deepchecks/open-deepchecks-spans-api/)
+- [Deepchecks LLM Evaluation Application Versions System API](https://apis.io/collections/deepchecks/open-deepchecks-system-api/)
 
-### Deepchecks Applications / Versions API
+#### Security (2)
 
-Creates and lists evaluation applications and their versions, the organizational units that scope interactions, properties, and evaluation runs in the Deepchecks LLM Evaluation platform.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://llmdocs.deepchecks.com/reference](https://llmdocs.deepchecks.com/reference)
-- **Base URL:** `https://app.llm.deepchecks.com/api/v1`
+- [Deepchecks Authentication](https://apis.io/security/deepchecks/deepchecks-authentication/)
+- [Deepchecks Domain Security](https://apis.io/security/deepchecks/deepchecks-domain-security/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- Applications
-- Versions
-- Configuration
+Published plans, tiers and prices.
 
-#### Properties
+- [Deepchecks Plans Pricing](https://apis.io/plans/deepchecks/deepchecks-plans-pricing/)
 
-- [Documentation](https://llmdocs.deepchecks.com/docs/deepchecks-sdk)
-- [API Reference](https://llmdocs.deepchecks.com/reference)
-- [OpenAPI](openapi/deepchecks-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/deepchecks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/deepchecks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [GitHub](https://github.com/deepchecks)
+#### Rate limits (1)
 
-### Deepchecks Annotations API
+Published request limits.
 
-Reads automatic and manual annotations (good / bad / unknown labels and reasons) attached to logged interactions, returned alongside interactions when downloading enriched evaluation data.
+- [Deepchecks Rate Limits](https://apis.io/rate-limits/deepchecks/deepchecks-rate-limits/)
 
-- **Human URL:** [https://llmdocs.deepchecks.com/reference](https://llmdocs.deepchecks.com/reference)
-- **Base URL:** `https://app.llm.deepchecks.com/api/v1`
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Annotations
-- Labels
-- Evaluation
+- [Deepchecks Finops](https://apis.io/finops/deepchecks/deepchecks-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://llmdocs.deepchecks.com/docs/deepchecks-sdk)
-- [API Reference](https://llmdocs.deepchecks.com/reference)
-- [OpenAPI](openapi/deepchecks-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/deepchecks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/deepchecks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [GitHub](https://github.com/deepchecks)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Deepchecks Properties API
-
-Configures LLM property definitions and display names per application, governing the built-in and custom properties (relevance, grounded-in-context, toxicity, PII, and more) that Deepchecks computes over logged interactions.
-
-- **Human URL:** [https://llmdocs.deepchecks.com/reference](https://llmdocs.deepchecks.com/reference)
-- **Base URL:** `https://app.llm.deepchecks.com/api/v1`
-
-#### Tags
-
-- Properties
-- Metrics
-- Custom Properties
-
-#### Properties
-
-- [Documentation](https://llmdocs.deepchecks.com/docs/deepchecks-sdk)
-- [API Reference](https://llmdocs.deepchecks.com/reference)
-- [OpenAPI](openapi/deepchecks-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/deepchecks.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/deepchecks.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [GitHub](https://github.com/deepchecks)
-
-### Deepchecks Open-Source Testing
-
-The AGPL-3.0 licensed open-source Python package for continuous validation of tabular, computer-vision, and LLM/NLP data and models. Distributed via PyPI (pip install deepchecks); a Python library rather than a hosted HTTP API.
-
-- **Human URL:** [https://github.com/deepchecks/deepchecks](https://github.com/deepchecks/deepchecks)
-- **Base URL:** `https://github.com/deepchecks/deepchecks`
-
-#### Tags
-
-- Open Source
-- Testing
-- Validation
-- Python
-
-#### Properties
-
-- [Documentation](https://docs.deepchecks.com/stable/getting-started/welcome.html)
-- [GitHub](https://github.com/deepchecks/deepchecks)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/deepchecks)
-- [LinkedIn](https://www.linkedin.com/company/deepchecks)
 - [Website](https://www.deepchecks.com)
 - [Documentation](https://llmdocs.deepchecks.com)
-- [Plans](plans/deepchecks-plans-pricing.yml)
-- [Rate Limits](rate-limits/deepchecks-rate-limits.yml)
-- [Fin Ops](finops/deepchecks-finops.yml)
+- [GitHub](https://github.com/deepchecks)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 23.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 42.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/deepchecks/](https://apis.io/providers/deepchecks/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Deepchecks: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/deepchecks/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
